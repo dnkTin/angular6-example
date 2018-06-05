@@ -9,11 +9,11 @@ import { MessageService } from './message.service';
 })
 export class HeroService {
 
-	getHeroes(): Observable<Hero[]> {
-		// TODO: send the message _after_ fetching the heroes
-		this.messageService.add('HeroService: fetched heroes');
-		return of(HEROES);
-	} 
+getHeroes(id: number): Observable<Hero[]> {
+    // TODO: send the message _after_ fetching the heroes
+    this.messageService.add('HeroService: fetched heroes');
+    return of(HEROES);
+}
 
 // Angular will inject the singleton MessageService into that property when it creates the HeroService.
   constructor(private messageService: MessageService) { }
